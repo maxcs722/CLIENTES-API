@@ -1,0 +1,52 @@
+Entrega Actividad API REST Clientes
+
+Alumno: Víctor Figueroa
+
+Repositorio GitHub:
+https://github.com/maxcs722/CLIENTES-API
+
+Video explicativo:
+https://youtube.com/TU_VIDEO
+
+
+
+
+/// Metodologia para realizar las pruebas mediante CURL ///
+
+🔹 1. GET — Ver clientes
+curl http://localhost:3000/api/clientes
+
+🔹 2. POST — Crear cliente
+curl -X POST http://localhost:3000/api/clientes \
+-H "Content-Type: application/json" \
+-d '{"nombre":"Victor","email":"victor@mail.com","telefono":"987654321"}'
+
+🔹 3. GET — Verificar que se creó
+curl http://localhost:3000/api/clientes
+
+🔹 4. PUT — Actualizar cliente
+curl -X PUT http://localhost:3000/api/clientes/1 \
+-H "Content-Type: application/json" \
+-d '{"nombre":"Victor Actualizado","email":"victor@mail.com","telefono":"999999999"}'
+
+🔹 5. DELETE — Eliminar cliente
+curl -X DELETE http://localhost:3000/api/clientes/4
+
+🔹 6. ERROR 409 — Email duplicado
+
+Ejecuta DOS veces:
+
+curl -X POST http://localhost:3000/api/clientes \
+-H "Content-Type: application/json" \
+-d '{"nombre":"Victor","email":"victor@mail.com","telefono":"123456789"}'
+LA SEGUNDA VEZ DEBE RESPONDER
+
+  "mensaje": "El correo ya está registrado"
+
+
+///Profe Muchas gracias por el conocimiento compartido///
+
+Saludos 
+
+Victor Figueroa 
+
