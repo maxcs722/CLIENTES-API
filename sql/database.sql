@@ -1,0 +1,11 @@
+CREATE DATABASE IF NOT EXISTS clientes_db;
+
+USE clientes_db;
+
+CREATE TABLE cliente (
+    id_cliente INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    telefono VARCHAR(20),
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);
